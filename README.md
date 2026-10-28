@@ -7,7 +7,7 @@ Praktikum: Pemrograman Mobile
 ---
 
 📝 Tugas Pertemuan 1  
-Tanggal: 21 Oktober  
+Tanggal: 21 Oktober 2026  
 
 Deskripsi Teknis & Non-Teknis:
 
@@ -27,7 +27,7 @@ Pertemuan pertama ini memberikan pemahaman yang cukup jelas mengenai aturan sint
 ---
 
 📝 Tugas Pertemuan 2  
-Tanggal: 28 Oktober  
+Tanggal: 28 Oktober 2026  
 
 Deskripsi Teknis & Non-Teknis:
 
