@@ -1,0 +1,18 @@
+# Exclude native and generated build files from GitHub's language stats
+*.h linguist-detectable=false
+*.cc linguist-detectable=false
+*.cpp linguist-detectable=false
+*.c linguist-detectable=false
+*.kt linguist-detectable=false
+*.java linguist-detectable=false
+*.swift linguist-detectable=false
+*.cmake linguist-detectable=false
+*.html linguist-detectable=false
+CMakeLists.txt linguist-detectable=false
+
+android/** linguist-detectable=false
+ios/** linguist-detectable=false
+windows/** linguist-detectable=false
+linux/** linguist-detectable=false
+macos/** linguist-detectable=false
+web/** linguist-detectable=false

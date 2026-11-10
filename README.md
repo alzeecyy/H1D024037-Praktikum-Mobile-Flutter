@@ -56,3 +56,31 @@ File: `docs/Pertemuan 2/`
 
 **Kesimpulan Praktikum:**  
 Pertemuan kedua memberikan pengalaman praktis dalam membuat antarmuka (UI) Flutter, mulai dari pengaturan layout Column dan Row, pemrosesan form input, navigasi antarhalaman, hingga menampilkan daftar data menggunakan ListView.
+
+---
+
+### 📝 Tugas Pertemuan 3: Login dan Side Menu
+
+**Tanggal**: 4 November 2026  
+
+**Deskripsi Teknis & Non-Teknis:**
+
+**Non-Teknis:**  
+Mengenal sistem autentikasi login, penggunaan penyimpanan lokal (`shared_preferences`), serta pembuatan menu samping (*side menu / drawer*) pada Flutter.
+
+**Teknis:**  
+- Menambahkan dependencies `shared_preferences` pada `pubspec.yaml`.
+- Membuat halaman login (`login_page.dart`) dan fungsi simpan username ke local storage.
+- Membuat validasi login dan menampilkan alert dialog (`showDialog`).
+- Menampilkan username yang tersimpan pada halaman utama (`home_page.dart`).
+- Membuat menu samping (`sidemenu.dart`) untuk navigasi ke halaman Home dan About (`about_page.dart`).
+
+**Screenshot:**  
+File: `docs/Pertemuan 3/`  
+
+| 1. Login Page | 2. Home Page | 3. Sidemenu |
+| :---: | :---: | :---: |
+| <img src="docs/Pertemuan%203/1.jpeg" width="220" /> | <img src="docs/Pertemuan%203/2.jpeg" width="220" /> | <img src="docs/Pertemuan%203/3.jpeg" width="220" /> |
+
+**Kesimpulan Praktikum:**  
+Pertemuan ketiga memberikan pemahaman tentang pembuatan halaman login, penyimpanan data lokal dengan shared_preferences, serta implementasi navigasi side menu (drawer).
