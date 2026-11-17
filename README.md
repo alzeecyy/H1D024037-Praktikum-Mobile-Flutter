@@ -89,7 +89,7 @@ Pertemuan ketiga memberikan pemahaman tentang integrasi penyimpanan data lokal (
 
 ### 📝 Tugas Pertemuan 4: Operasi CRUD dengan API CodeIgniter 4 (Bagian 1)
 
-**Tanggal**: 17 November 2026  
+**Tanggal**: 11 November 2026  
 
 **Deskripsi Teknis & Non-Teknis:**
 
