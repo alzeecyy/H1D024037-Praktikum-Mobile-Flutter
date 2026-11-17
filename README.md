@@ -66,21 +66,53 @@ Pertemuan kedua memberikan pengalaman praktis dalam membuat antarmuka (UI) Flutt
 **Deskripsi Teknis & Non-Teknis:**
 
 **Non-Teknis:**  
-Mengenal sistem autentikasi login, penggunaan penyimpanan lokal (`shared_preferences`), serta pembuatan menu samping (*side menu / drawer*) pada Flutter.
+Memahami alur autentikasi pengguna pada aplikasi mobile, pengelolaan sesi login menggunakan penyimpanan lokal (*local storage*) dengan `shared_preferences`, serta perancangan navigasi menu samping (*side menu / drawer*) dan perutean antarhalaman (*routes*).
 
 **Teknis:**  
-- Menambahkan dependencies `shared_preferences` pada `pubspec.yaml`.
-- Membuat halaman login (`login_page.dart`) dan fungsi simpan username ke local storage.
-- Membuat validasi login dan menampilkan alert dialog (`showDialog`).
-- Menampilkan username yang tersimpan pada halaman utama (`home_page.dart`).
-- Membuat menu samping (`sidemenu.dart`) untuk navigasi ke halaman Home dan About (`about_page.dart`).
+- Menambahkan dependensi `shared_preferences` pada `pubspec.yaml` untuk menyimpan data pengguna secara persisten di penyimpanan lokal.
+- Membuat form login (`login_page.dart`) berbasis `StatefulWidget`, mengelola input username dan password dengan `TextEditingController`, serta menyimpan data sesi via fungsi `_saveUsername()`.
+- Mengimplementasikan validasi autentikasi (user dan password `admin`) dengan memunculkan notifikasi pop-up dialog (`showDialog`) serta navigasi menuju `home_page.dart`.
+- Mengambil dan menampilkan username yang tersimpan secara asinkronus (`async`/`await`) pada halaman utama (`home_page.dart`).
+- Membangun menu navigasi samping (`sidemenu.dart`) menggunakan widget `Drawer`, `DrawerHeader`, dan `ListTile` untuk berpindah halaman antara Home dan About (`about_page.dart`).
 
 **Screenshot:**  
 File: `docs/Pertemuan 3/`  
 
-| 1. Login Page | 2. Home Page | 3. Sidemenu |
+| 1. Halaman Login | 2. Halaman Home Page | 3. Sidemenu / Drawer |
 | :---: | :---: | :---: |
 | <img src="docs/Pertemuan%203/1.jpeg" width="220" /> | <img src="docs/Pertemuan%203/2.jpeg" width="220" /> | <img src="docs/Pertemuan%203/3.jpeg" width="220" /> |
 
 **Kesimpulan Praktikum:**  
-Pertemuan ketiga memberikan pemahaman tentang pembuatan halaman login, penyimpanan data lokal dengan shared_preferences, serta implementasi navigasi side menu (drawer).
+Pertemuan ketiga memberikan pemahaman tentang integrasi penyimpanan data lokal (local storage), perancangan sistem autentikasi sederhana disertai dialog interaktif, serta implementasi struktur navigasi multi-halaman menggunakan menu samping (drawer).
+
+---
+
+### 📝 Tugas Pertemuan 4: Operasi CRUD dengan API CodeIgniter 4 (Bagian 1)
+
+**Tanggal**: 17 November 2026  
+
+**Deskripsi Teknis & Non-Teknis:**
+
+**Non-Teknis:**  
+Mengenal konsep dasar Web API, arsitektur REST, pembuatan database MySQL, serta pembuatan antarmuka (UI) Flutter yang siap diintegrasikan dengan RESTful API.
+
+**Teknis:**  
+- Membuat database `toko_api` beserta tabel `member`, `member_token`, dan `produk` menggunakan HeidiSQL/Laragon.
+- Membuat backend RESTful API dengan CodeIgniter 4 untuk endpoint registrasi, login, dan CRUD produk (`GET`, `POST`, `PUT`, `DELETE`).
+- Menguji seluruh endpoint API menggunakan Postman dengan response berformat JSON.
+- Membuat model data Flutter (`login.dart`, `registrasi.dart`, `produk.dart`) dengan konversi objek via `fromJson`.
+- Membuat halaman UI Flutter: `registrasi_page.dart`, `login_page.dart`, form dinamis `produk_form.dart`, `produk_detail.dart`, dan daftar produk `produk_page.dart`.
+
+**Screenshot:**  
+File: `docs/Pertemuan 4/`  
+
+| 1. List Produk | 2. Form Tambah Produk (Kosong) | 3. Form Tambah Produk (Terisi) |
+| :---: | :---: | :---: |
+| <img src="docs/Pertemuan%204/1.jpeg" width="220" /> | <img src="docs/Pertemuan%204/2.jpeg" width="220" /> | <img src="docs/Pertemuan%204/3.jpeg" width="220" /> |
+
+| 4. Detail Produk | 5. Form Ubah Produk |
+| :---: | :---: |
+| <img src="docs/Pertemuan%204/4.jpeg" width="220" /> | <img src="docs/Pertemuan%204/5.jpeg" width="220" /> |
+
+**Kesimpulan Praktikum:**  
+Pertemuan keempat memberikan pemahaman mengenai pembuatan database dan RESTful API CodeIgniter 4 untuk operasi autentikasi dan CRUD produk, serta perancangan halaman antarmuka Flutter yang terstruktur menggunakan model data.
