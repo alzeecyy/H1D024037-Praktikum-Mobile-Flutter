@@ -8,12 +8,20 @@ class Login {
   Login({this.code, this.status, this.token, this.userID, this.userEmail});
 
   factory Login.fromJson(Map<String, dynamic> obj) {
+    var data = obj['data'];
+    var user = (data is Map) ? data['user'] : null;
+
+    int? parsedUserId;
+    if (user != null && user['id'] != null) {
+      parsedUserId = user['id'] is int ? user['id'] : int.tryParse(user['id'].toString());
+    }
+
     return Login(
-      code: obj['code'],
+      code: obj['code'] is int ? obj['code'] : int.tryParse(obj['code'].toString()),
       status: obj['status'],
-      token: obj['data']['token'],
-      userID: obj['data']['user']['id'],
-      userEmail: obj['data']['user']['email'],
+      token: (data is Map) ? data['token'] : null,
+      userID: parsedUserId,
+      userEmail: (user != null) ? user['email'] : null,
     );
   }
 }

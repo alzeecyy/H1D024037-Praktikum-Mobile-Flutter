@@ -116,3 +116,33 @@ File: `docs/Pertemuan 4/`
 
 **Kesimpulan Praktikum:**  
 Pertemuan keempat memberikan pemahaman mengenai pembuatan database dan RESTful API CodeIgniter 4 untuk operasi autentikasi dan CRUD produk, serta perancangan halaman antarmuka Flutter yang terstruktur menggunakan model data.
+
+---
+
+### 📝 Tugas Pertemuan 5: Integrasi REST API dan BLoC Pattern (CRUD Module Bagian 2)
+
+**Tanggal**: 18 November 2026  
+
+**Deskripsi Teknis & Non-Teknis:**
+
+**Non-Teknis:**  
+Menghubungkan aplikasi Flutter secara penuh dengan backend REST API (CodeIgniter 4 & MySQL), mengelola status autentikasi pengguna secara persisten menggunakan token sesi, serta menerapkan arsitektur pemisahan logika bisnis (*Business Logic Component* / BLoC) dan penanganan dialog respon interaktif (*success/warning dialog*).
+
+**Teknis:**  
+- Menambahkan dependensi `http` dan `shared_preferences` pada `pubspec.yaml` untuk komunikasi jaringan dan manajemen token login pengguna.
+- Membuat modul helper `user_info.dart` (penyimpanan token/userID), `app_exception.dart` (penanganan error HTTP kustom), `api.dart` (HTTP client wrapper dengan Bearer token header), dan `api_url.dart` (manajemen endpoint API).
+- Mengimplementasikan arsitektur BLoC pada folder `lib/bloc/` yang mencakup `registrasi_bloc.dart`, `login_bloc.dart`, `logout_bloc.dart`, serta `produk_bloc.dart` untuk operasi CRUD produk.
+- Membuat komponen dialog kustom `success_dialog.dart` dan `warning_dialog.dart` untuk menampilkan notifikasi interaktif saat aksi berhasil maupun gagal.
+- Mengintegrasikan logika BLoC ke dalam UI Flutter (`registrasi_page.dart`, `login_page.dart`, `produk_page.dart`, `produk_form.dart`, dan `produk_detail.dart`) serta mengatur alur pengecekan sesi login pada startup aplikasi di `main.dart`.
+
+**Screenshot:**  
+File: `docs/Pertemuan 5/`  
+
+| 1. Uji REST API Browser | 2. Form Registrasi | 3. Sukses Registrasi |
+| :---: | :---: | :---: |
+| <img src="docs/Pertemuan%205/1.jpeg?v=2" width="220" /> | <img src="docs/Pertemuan%205/2.jpeg?v=2" width="220" /> | <img src="docs/Pertemuan%205/3.jpeg?v=2" width="220" /> |
+| **4. Form Login & Gagal** | **5. List Data Produk** | **6. Side Menu & Logout** |
+| <img src="docs/Pertemuan%205/4.jpeg?v=2" width="220" /> | <img src="docs/Pertemuan%205/5.jpeg?v=2" width="220" /> | <img src="docs/Pertemuan%205/6.jpeg?v=2" width="220" /> |
+
+**Kesimpulan Praktikum:**  
+Pertemuan kelima berhasil menyelesaikan integrasi menyeluruh antara antarmuka Flutter dan backend REST API MySQL, mulai dari autentikasi pengguna dengan penyimpanan token sesi, pemisahan logika bisnis menggunakan pola BLoC, hingga penyajian dan manipulasi data produk secara *real-time*.

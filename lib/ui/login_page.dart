@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:belajarflutter/bloc/login_bloc.dart';
+import 'package:belajarflutter/helpers/user_info.dart';
+import 'package:belajarflutter/ui/produk_page.dart';
 import 'package:belajarflutter/ui/registrasi_page.dart';
+import 'package:belajarflutter/widget/warning_dialog.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -30,9 +34,12 @@ class _LoginPageState extends State<LoginPage> {
               children: [
                 _emailTextField(),
                 _passwordTextField(),
+                const SizedBox(
+                  height: 15,
+                ),
                 _buttonLogin(),
                 const SizedBox(
-                  height: 30,
+                  height: 10,
                 ),
                 _menuRegistrasi()
               ],
@@ -82,8 +89,53 @@ class _LoginPageState extends State<LoginPage> {
       child: const Text("Login"),
       onPressed: () {
         var validate = _formKey.currentState!.validate();
+        if (validate) {
+          if (!_isLoading) _submit();
+        }
       },
     );
+  }
+
+  void _submit() {
+    _formKey.currentState!.save();
+    setState(() {
+      _isLoading = true;
+    });
+    LoginBloc.login(
+            email: _emailTextboxController.text,
+            password: _passwordTextboxController.text)
+        .then((value) async {
+      if (value.status == true) {
+        await UserInfo().setToken(value.token.toString());
+        await UserInfo().setUserID(int.parse(value.userID.toString()));
+        if (!mounted) return;
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => const ProdukPage()));
+      } else {
+        if (!mounted) return;
+        showDialog(
+            context: context,
+            barrierDismissible: false,
+            builder: (BuildContext context) => const WarningDialog(
+                  description: "Login gagal, silahkan coba lagi",
+                ));
+      }
+    }, onError: (error) {
+      print(error);
+      if (!mounted) return;
+      showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (BuildContext context) => const WarningDialog(
+                description: "Login gagal, silahkan coba lagi",
+              ));
+    }).whenComplete(() {
+      if (mounted) {
+        setState(() {
+          _isLoading = false;
+        });
+      }
+    });
   }
 
   // Membuat menu untuk membuka halaman registrasi
